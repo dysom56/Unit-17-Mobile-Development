@@ -16,13 +16,13 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+    int increment;
     Button workout_screen;
     Button water_screen;
     Button timer_screen;
     Button add_water;
     Button minus_water;
     TextView water_drunk;
-
     RadioGroup radioGroup;
 
     @Override
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String getIncrement = String.valueOf(rb.getText());
                 getIncrement = getIncrement.replace("ml", "");
 
-                Global.increment = Integer.parseInt(getIncrement);
+                increment = Integer.parseInt(getIncrement);
             }
         });
 
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String water = (water_drunk.getText().toString());
             water = water.replace(" ml", "");
 
-            int realWater = Integer.parseInt(water) + Global.increment;
+            int realWater = Integer.parseInt(water) + increment;
             water = (Integer.toString(realWater)) + " ml";
 
             water_drunk.setText(water);
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String water = (water_drunk.getText().toString());
             water = water.replace(" ml", "");
 
-            int realWater = Integer.parseInt(water) - Global.increment;
+            int realWater = Integer.parseInt(water) - increment;
             water = (Integer.toString(realWater)) + " ml";
 
             water_drunk.setText(water);
