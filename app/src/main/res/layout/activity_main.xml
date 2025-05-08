@@ -61,12 +61,14 @@
             android:id="@+id/HundredOpt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:checked="false"
             android:text="100ml" />
 
         <RadioButton
             android:id="@+id/TwoFiftyOpt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:checked="true"
             android:text="250ml" />
     </RadioGroup>
 

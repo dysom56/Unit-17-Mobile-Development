@@ -2,6 +2,9 @@ package com.example.unit_17_mobile_dev;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.se.omapi.Session;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -24,6 +27,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button minus_water;
     TextView water_drunk;
     RadioGroup radioGroup;
+    RadioButton hundredOpt;
+    RadioButton twoFiftyOpt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +58,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 String getIncrement = String.valueOf(rb.getText());
                 getIncrement = getIncrement.replace("ml", "");
 
-                increment = Integer.parseInt(getIncrement);
+                SessionSaved.increment = Integer.parseInt(getIncrement);
             }
         });
+
+        water_drunk.setText(SessionSaved.water + " ml");
+
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -70,16 +79,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             String water = (water_drunk.getText().toString());
             water = water.replace(" ml", "");
 
-            int realWater = Integer.parseInt(water) + increment;
-            water = (Integer.toString(realWater)) + " ml";
+            SessionSaved.water = Integer.parseInt(water) + SessionSaved.increment;
+            water = (SessionSaved.water) + " ml";
 
             water_drunk.setText(water);
         } else if (v.getId() == R.id.MinusWater) {
             String water = (water_drunk.getText().toString());
             water = water.replace(" ml", "");
 
-            int realWater = Integer.parseInt(water) - increment;
-            water = (Integer.toString(realWater)) + " ml";
+            SessionSaved.water = Integer.parseInt(water) - SessionSaved.increment;
+            water = (SessionSaved.water) + " ml";
 
             water_drunk.setText(water);
         }

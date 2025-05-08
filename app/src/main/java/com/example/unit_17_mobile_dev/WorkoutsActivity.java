@@ -2,15 +2,13 @@ package com.example.unit_17_mobile_dev;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.se.omapi.Session;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class WorkoutsActivity extends AppCompatActivity implements View.OnClickListener {
     Button water_screen;
@@ -52,16 +50,108 @@ public class WorkoutsActivity extends AppCompatActivity implements View.OnClickL
         dist_text = findViewById(R.id.RunText);
 
         water_screen.setOnClickListener(this);
+        timer_screen.setOnClickListener(this);
+        add_pushup.setOnClickListener(this);
+        minus_pushup.setOnClickListener(this);
+        add_situp.setOnClickListener(this);
+        minus_situp.setOnClickListener(this);
+        add_squat.setOnClickListener(this);
+        minus_squat.setOnClickListener(this);
+        add_dist.setOnClickListener(this);
+        minus_dist.setOnClickListener(this);
+
+        // Set the text to variable saved in other class "SessionSaved"
+        pushup_text.setText("Pushups: " + SessionSaved.pushups);
+        situp_text.setText("Situps: " + SessionSaved.situps);
+        squat_text.setText("Squats: " + SessionSaved.squats);
+        dist_text.setText("Distance Ran: " + SessionSaved.dist + " m");
     }
 
     @Override
     public void onClick(View v) {
+        // Pushup Buttons
+        if (v.getId() == R.id.AddPushup) {
+            String fullString = pushup_text.getText().toString();
+            String num = fullString.replace("Pushups: ", "");
+            SessionSaved.pushups = (Integer.parseInt(num)) + 1;
 
+            String value = "Pushups: " + SessionSaved.pushups;
 
-        if (v.getId() == R.id.WorkoutScreen) {
-            Intent switchActivityIntent = new Intent(this, WorkoutsActivity.class);
+            pushup_text.setText(value);
+        } else if (v.getId() == R.id.MinusPushup) {
+            String fullString = pushup_text.getText().toString();
+            String num = fullString.replace("Pushups: ", "");
+            SessionSaved.pushups = (Integer.parseInt(num)) - 1;
+
+            String value = "Pushups: " + SessionSaved.pushups;
+
+            pushup_text.setText(value);
+        }
+
+        // Situp Buttons
+        if (v.getId() == R.id.AddSitup) {
+            String fullString = situp_text.getText().toString();
+            String num = fullString.replace("Situps: ", "");
+            SessionSaved.situps = (Integer.parseInt(num)) + 1;
+
+            String value = "Situps: " + SessionSaved.situps;
+
+            situp_text.setText(value);
+        } else if (v.getId() == R.id.MinusSitup) {
+            String fullString = situp_text.getText().toString();
+            String num = fullString.replace("Situps: ", "");
+            SessionSaved.situps = (Integer.parseInt(num)) - 1;
+
+            String value = "Situps: " + SessionSaved.situps;
+
+            situp_text.setText(value);
+        }
+
+        // Squat Buttons
+        if (v.getId() == R.id.AddSquat) {
+            String fullString = squat_text.getText().toString();
+            String num = fullString.replace("Squats: ", "");
+            SessionSaved.squats = (Integer.parseInt(num)) + 1;
+
+            String value = "Squats: " + SessionSaved.squats;
+
+            squat_text.setText(value);
+        } else if (v.getId() == R.id.MinusSquat) {
+            String fullString = squat_text.getText().toString();
+            String num = fullString.replace("Squats: ", "");
+            SessionSaved.squats = (Integer.parseInt(num)) - 1;
+
+            String value = "Squats: " + SessionSaved.squats;
+
+            squat_text.setText(value);
+        }
+
+        // Distance Buttons
+        if (v.getId() == R.id.AddDist) {
+            String fullString = dist_text.getText().toString();
+            String num = fullString.replace("Distance Ran: ", "");
+            num = num.replace(" m", "");
+            SessionSaved.dist = (Integer.parseInt(num)) + 100;
+
+            String value = "Distance Ran: " + SessionSaved.dist + " m";
+
+            dist_text.setText(value);
+        } else if (v.getId() == R.id.MinusDist) {
+            String fullString = dist_text.getText().toString();
+            String num = fullString.replace("Distance Ran: ", "");
+            num = num.replace(" m", "");
+            SessionSaved.dist = (Integer.parseInt(num)) - 100;
+
+            String value = "Distance Ran: " + SessionSaved.dist + " m";
+
+            dist_text.setText(value);
+        }
+
+        // Screen Swap Buttons
+        if (v.getId() == R.id.WaterScreen2) {
+            Intent switchActivityIntent = new Intent(this, MainActivity.class);
             startActivity(switchActivityIntent);
-        } else if (v.getId() == R.id.TimerScreen) {
+        } else if (v.getId() == R.id.TimerScreen2) {
             Intent switchActivityIntent = new Intent(this, TimerActivity.class);
             startActivity(switchActivityIntent);
         }
