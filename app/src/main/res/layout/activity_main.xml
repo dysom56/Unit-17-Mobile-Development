@@ -7,13 +7,103 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
+    <Button
+        android:id="@+id/WorkoutScreen"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="124dp"
+        android:layout_height="56dp"
+        android:text="Workouts"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <Button
+        android:id="@+id/WaterScreen"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="124dp"
+        android:layout_height="56dp"
+        android:text="Water"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <Button
+        android:id="@+id/TimerScreen"
+        style="@style/Widget.AppCompat.Button"
+        android:layout_width="124dp"
+        android:layout_height="56dp"
+        android:text="Timer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <RadioGroup
+        android:id="@+id/WaterRadioGroup"
+        android:layout_width="78dp"
+        android:layout_height="123dp"
+        app:layout_constraintBottom_toTopOf="@+id/WorkoutScreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.916">
+
+        <RadioButton
+            android:id="@+id/HundredOpt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="100ml" />
+
+        <RadioButton
+            android:id="@+id/TwoFiftyOpt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="250ml" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/AddWater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.76"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.479" />
+
+    <Button
+        android:id="@+id/MinusWater"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.236"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48" />
+
+    <TextView
+        android:id="@+id/WaterDrunk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0 ml"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.481" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
