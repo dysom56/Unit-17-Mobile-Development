@@ -1,5 +1,6 @@
 package com.example.unit_17_mobile_dev;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         add_water.setOnClickListener(this);
         minus_water.setOnClickListener(this);
+        workout_screen.setOnClickListener(this);
+        timer_screen.setOnClickListener(this);
 
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
@@ -79,6 +82,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             water = (Integer.toString(realWater)) + " ml";
 
             water_drunk.setText(water);
+        }
+
+        if (v.getId() == R.id.WorkoutScreen) {
+            Intent switchActivityIntent = new Intent(this, WorkoutsActivity.class);
+            startActivity(switchActivityIntent);
+        } else if (v.getId() == R.id.TimerScreen) {
+            Intent switchActivityIntent = new Intent(this, TimerActivity.class);
+            startActivity(switchActivityIntent);
         }
     }
 }
