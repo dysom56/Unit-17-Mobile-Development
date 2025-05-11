@@ -21,7 +21,6 @@ public class WorkoutsActivity extends AppCompatActivity implements View.OnClickL
     Button minus_squat;
     Button add_dist;
     Button minus_dist;
-
     TextView pushup_text;
     TextView situp_text;
     TextView squat_text;

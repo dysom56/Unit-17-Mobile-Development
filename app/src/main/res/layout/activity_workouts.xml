@@ -6,7 +6,7 @@
              android:layout_height="match_parent">
 
     <Button
-        android:id="@+id/workoutScreen2"
+        android:id="@+id/WorkoutScreen2"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="124dp"
         android:layout_height="56dp"

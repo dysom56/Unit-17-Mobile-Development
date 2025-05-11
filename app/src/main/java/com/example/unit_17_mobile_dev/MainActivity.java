@@ -42,7 +42,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         add_water = findViewById(R.id.AddWater);
         minus_water = findViewById(R.id.MinusWater);
         water_drunk = findViewById(R.id.WaterDrunk);
+
         radioGroup = findViewById(R.id.WaterRadioGroup);
+        hundredOpt = findViewById(R.id.HundredOpt);
+        twoFiftyOpt = findViewById(R.id.TwoFiftyOpt);
 
         add_water.setOnClickListener(this);
         minus_water.setOnClickListener(this);
@@ -53,18 +56,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 RadioButton rb = findViewById(checkedId);
-                Toast.makeText(getApplicationContext(), "Selected: " + rb.getText(), Toast.LENGTH_SHORT).show();
 
                 String getIncrement = String.valueOf(rb.getText());
-                getIncrement = getIncrement.replace("ml", "");
-
-                SessionSaved.increment = Integer.parseInt(getIncrement);
+                if (getIncrement.equals("100ml")) {
+                    SessionSaved.isHundChecked = true;
+                    SessionSaved.increment = 100;
+                } else if (getIncrement.equals("250ml")) {
+                    SessionSaved.isHundChecked = false;
+                    SessionSaved.increment = 250;
+                }
+//                getIncrement = getIncrement.replace("ml", "");
+//
+//                SessionSaved.increment = Integer.parseInt(getIncrement);
             }
         });
 
         water_drunk.setText(SessionSaved.water + " ml");
 
-
+        if (SessionSaved.isHundChecked) {
+            hundredOpt.setChecked(true);
+            twoFiftyOpt.setChecked(false);
+            SessionSaved.increment = 100;
+        } else if (SessionSaved.isHundChecked == false) {
+            twoFiftyOpt.setChecked(true);
+            hundredOpt.setChecked(false);
+            SessionSaved.increment = 250;
+        }
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
