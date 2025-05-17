@@ -119,7 +119,7 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
             Intent switchActivityIntent = new Intent(this, WorkoutsActivity.class);
             startActivity(switchActivityIntent);
         } else if (v.getId() == R.id.WaterScreen3) {
-            Intent switchActivityIntent = new Intent(this, MainActivity.class);
+            Intent switchActivityIntent = new Intent(this, WaterActivity.class);
             startActivity(switchActivityIntent);
         }
     }

@@ -8,102 +8,56 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/WorkoutScreen"
+        android:id="@+id/WorkoutScreen4"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="124dp"
         android:layout_height="56dp"
         android:text="Workouts"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.605" />
 
     <Button
-        android:id="@+id/WaterScreen"
+        android:id="@+id/WaterScreen4"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="124dp"
         android:layout_height="56dp"
         android:text="Water"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.055"
+        app:layout_constraintHorizontal_bias="0.045"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.605" />
 
     <Button
-        android:id="@+id/TimerScreen"
+        android:id="@+id/TimerScreen4"
         style="@style/Widget.AppCompat.Button"
         android:layout_width="124dp"
         android:layout_height="56dp"
         android:text="Timer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.944"
+        app:layout_constraintHorizontal_bias="0.933"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
-
-    <RadioGroup
-        android:id="@+id/WaterRadioGroup"
-        android:layout_width="78dp"
-        android:layout_height="123dp"
-        app:layout_constraintBottom_toTopOf="@+id/WorkoutScreen"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.916">
-
-        <RadioButton
-            android:id="@+id/HundredOpt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="100ml" />
-
-        <RadioButton
-            android:id="@+id/TwoFiftyOpt"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="250ml" />
-    </RadioGroup>
-
-    <Button
-        android:id="@+id/AddWater"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="+"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.76"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.479" />
-
-    <Button
-        android:id="@+id/MinusWater"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="-"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.236"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48" />
+        app:layout_constraintVertical_bias="0.605" />
 
     <TextView
-        android:id="@+id/WaterDrunk"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0 ml"
+        android:id="@+id/textView2"
+        android:layout_width="380dp"
+        android:layout_height="155dp"
+        android:text="Habit Tracker"
+        android:textAlignment="center"
+        android:textSize="60sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.481" />
-
+        app:layout_constraintVertical_bias="0.237" />
 </androidx.constraintlayout.widget.ConstraintLayout>

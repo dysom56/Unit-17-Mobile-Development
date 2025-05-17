@@ -148,7 +148,7 @@ public class WorkoutsActivity extends AppCompatActivity implements View.OnClickL
 
         // Screen Swap Buttons
         if (v.getId() == R.id.WaterScreen2) {
-            Intent switchActivityIntent = new Intent(this, MainActivity.class);
+            Intent switchActivityIntent = new Intent(this, WaterActivity.class);
             startActivity(switchActivityIntent);
         } else if (v.getId() == R.id.TimerScreen2) {
             Intent switchActivityIntent = new Intent(this, TimerActivity.class);
