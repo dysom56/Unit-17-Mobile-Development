@@ -15,7 +15,6 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class WaterActivity extends AppCompatActivity implements View.OnClickListener {
-    int increment;
     Button workout_screen;
     Button water_screen;
     Button timer_screen;
