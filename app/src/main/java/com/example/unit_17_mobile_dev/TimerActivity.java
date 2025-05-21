@@ -64,13 +64,13 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
 
                 if (String.valueOf(rb.getText()).equals("Timer")) {
                     SessionSaved.isTimerChecked = true;
-                    //isTimer = true;
+
                     add_time.setVisibility(View.VISIBLE);
                     minus_time.setVisibility(View.VISIBLE);
                     set0Time();
                 } else if (String.valueOf(rb.getText()).equals("Stopwatch")) {
                     SessionSaved.isTimerChecked = false;
-                    //isTimer = false;
+
                     add_time.setVisibility(View.GONE);
                     minus_time.setVisibility(View.GONE);
                     set0Time();
@@ -137,11 +137,11 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
                             if (SessionSaved.isTimerChecked) {
                                 if (SessionSaved.time >= 1) {
                                     SessionSaved.time = SessionSaved.time - 1;
-                                    time_amount.setText(Integer.toString(SessionSaved.time));
+                                    time_amount.setText((SessionSaved.time + "s"));
                                 }
                             } else if (!SessionSaved.isTimerChecked) {
                                 SessionSaved.time = SessionSaved.time + 1;
-                                time_amount.setText(Integer.toString(SessionSaved.time));
+                                time_amount.setText((SessionSaved.time));
                             }
                         }
                     }
