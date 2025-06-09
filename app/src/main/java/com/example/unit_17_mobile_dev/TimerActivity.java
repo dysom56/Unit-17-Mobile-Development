@@ -141,7 +141,7 @@ public class TimerActivity extends AppCompatActivity implements View.OnClickList
                                 }
                             } else if (!SessionSaved.isTimerChecked) {
                                 SessionSaved.time = SessionSaved.time + 1;
-                                time_amount.setText((SessionSaved.time));
+                                time_amount.setText(Integer.toString(SessionSaved.time));
                             }
                         }
                     }
